@@ -43,7 +43,7 @@ under their own license (https://github.com/PriorLabs/TabPFN).
 ## 2. Installation
 
 ```bash
-git clone [REPOSITORY URL]
+git clone https://github.com/Mava04/boundarypfn
 cd boundarypfn
 conda env create -f environment.yml
 conda activate boundarypfn
@@ -73,7 +73,7 @@ Expected output in `results/demo/`:
 - `images/shap_cv.png`, `images/shap_final_model.png`, `images/roc.png`,
   `images/precision_recall.png`
 
-Expected run time: about 4 min with a GPU.
+Expected run time: ~4 min with a GPU.
 
 Permutation test on the demo (real labels + 30 permutations):
 
@@ -141,11 +141,11 @@ observed.
    ```bash
    python run_analysis.py config/manuscript.yaml --check
    ```
-3. Main analysis ([about X min] on one GPU):
+3. Main analysis (~4 min on one GPU):
    ```bash
    python run_analysis.py config/manuscript.yaml
    ```
-4. Permutation test (200 permutations as 10 PBS jobs, [about X min] per
+4. Permutation test (200 permutations as 10 PBS jobs, ~1 min per
    permutation), then summary:
    ```bash
    qsub pbs/permutations.pbs
