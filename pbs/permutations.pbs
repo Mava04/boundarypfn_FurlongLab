@@ -1,0 +1,17 @@
+#!/bin/bash
+# 201 runs (real labels + 200 permutations) as 10 jobs of 21 runs each.
+# Adjust the resource line to your cluster. Submit from the repository root:
+#   qsub pbs/permutations.pbs
+# Then: python permutation_test.py summarize config/manuscript.yaml
+#PBS -N perm
+#PBS -J 0-9
+#PBS -l select=1:ncpus=4:ngpus=1:mem=16gb
+#PBS -l walltime=04:00:00
+#PBS -j oe
+
+cd "$PBS_O_WORKDIR"
+source "$(conda info --base)/etc/profile.d/conda.sh"
+conda activate boundarypfn
+
+python permutation_test.py run config/manuscript.yaml \
+    --start $(( PBS_ARRAY_INDEX * 21 )) --n 21

@@ -1,0 +1,20 @@
+# Minimal environment for this repository (GPU, CUDA 11.8).
+# For CPU only, replace the torch line with: torch==2.6.0
+name: boundarypfn
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu118
+      - torch==2.6.0+cu118
+      - numpy==2.2.6
+      - pandas==2.3.1
+      - scikit-learn==1.6.1
+      - matplotlib==3.10.3
+      - pyyaml==6.0.2
+      - optuna==4.4.0
+      - shap==0.48.0
+      - tabpfn==2.1.0
+      - tabpfn-extensions==0.1.1

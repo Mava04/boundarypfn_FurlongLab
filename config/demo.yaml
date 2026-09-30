@@ -1,0 +1,17 @@
+# Demo on simulated data (data/demo). Run from the repository root:
+#   python run_analysis.py config/demo.yaml
+cv_file: data/demo/demo_dataset1.csv
+ext_pos_file: data/demo/demo_dataset2_pos.csv
+ext_neg_file: data/demo/demo_dataset2_neg.csv
+metrics_file: data/demo/demo_motifpair_metrics.csv
+out_dir: results/demo
+
+# Lower working-rate thresholds than the manuscript (small simulated data)
+min_workA: 0.5
+min_workB: 0.5
+min_rep_ins: 5
+min_freq_genome_or: 0.25
+min_rep_genome_or: 10
+min_rep_genome_anyor: 0
+
+n_features: 10
