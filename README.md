@@ -4,7 +4,7 @@ Selection of oriented motif pairs that predict boundary pairing, using TabPFN
 and SHAP. Motif pairs are selected on dataset 1 (inserted boundary pairs) with
 5-fold cross-validation and tested on dataset 2 (genomic boundary pairs).
 
-Code for the manuscript "[TITLE]".
+Code for the manuscript "Heterotypic directional motifs contribute to TAD boundary function in *Drosophila*".
 
 ## Repository contents
 
@@ -24,14 +24,14 @@ Code for the manuscript "[TITLE]".
 
 ## 1. System requirements
 
-**Operating system:** Linux (x86_64). Tested on [distribution and version].
+**Operating system:** Linux (x86_64). Tested on CentOS Linux 7 (Core).
 
 **Software:** Python 3.11 and the packages in `environment.yml`: tabpfn 2.1.0,
 tabpfn-extensions 0.1.1, torch 2.6.0 (CUDA 11.8 build), shap 0.48.0,
 optuna 4.4.0, scikit-learn 1.6.1, numpy 2.2.6, pandas 2.3.1,
 matplotlib 3.10.3, pyyaml 6.0.2.
 
-**Tested on:** [OS], NVIDIA Tesla [model] GPU ([N] GB), CUDA 11.8.
+**Tested on:** CentOS Linux 7 (Core), NVIDIA Tesla T4 GPU (32 GB), CUDA 11.8.
 
 **Hardware:** an NVIDIA GPU is recommended. The code also runs on CPU, more
 slowly. Memory use is a few GB of GPU memory and under 8 GB of system memory.
@@ -52,7 +52,7 @@ conda activate boundarypfn
 For CPU only, edit the torch line in `environment.yml` as described in its
 header.
 
-Typical install time on a standard desktop computer: [about 5 to 10 min].
+Typical install time on a standard desktop computer: 5-10 min.
 
 ## 3. Demo
 
@@ -73,7 +73,7 @@ Expected output in `results/demo/`:
 - `images/shap_cv.png`, `images/shap_final_model.png`, `images/roc.png`,
   `images/precision_recall.png`
 
-Expected run time: [about X min with a GPU, about Y min on CPU].
+Expected run time: about 4 min with a GPU.
 
 Permutation test on the demo (real labels + 30 permutations):
 
@@ -152,12 +152,12 @@ observed.
    python permutation_test.py summarize config/manuscript.yaml
    ```
 
-| Manuscript item | File in `results/manuscript/` |
+| Output | File in `results/[your_name]/` |
 |---|---|
-| Figure [X] (SHAP) | `images/shap_cv.png`, `images/shap_final_model.png` |
-| Figure [X] (ROC, PR) | `images/roc.png`, `images/precision_recall.png` |
-| Table [X] (metrics) | `tables/metrics.csv`, `tables/summary.csv` |
-| Figure [X] (permutation) | `images/permutation_null.png` |
+| Figure: SHAP | `images/shap_cv.png`, `images/shap_final_model.png` |
+| Figure: ROC, PR | `images/roc.png`, `images/precision_recall.png` |
+| Table: metrics | `tables/metrics.csv`, `tables/summary.csv` |
+| Figure: permutation | `images/permutation_null.png` |
 
 ## License
 
